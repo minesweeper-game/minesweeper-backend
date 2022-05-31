@@ -12,6 +12,7 @@ class MinesweeperGameBoard {
     val difficulty: GameDifficulty
     val boardBoxes: Array<Array<MinesweeperBoardBox>>
 
+
     constructor(rows: Int, cols: Int, difficulty: GameDifficulty ){
 
         if (rows < MIN_ROWS_AND_COLS || cols < MIN_ROWS_AND_COLS) throw IllegalArgumentException("The minimum amount of rows and cols to be configured is $MIN_ROWS_AND_COLS")

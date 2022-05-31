@@ -17,7 +17,7 @@ internal class MinesweeperGameResponseTest {
         val expectedGameDifficulty = GameDifficulty.EASY
 
         // when
-        val minesweeperGameType = MinesweeperGameType(expectedId, expectedRows, expectedCols, expectedGameDifficulty)
+        val minesweeperGameType = MinesweeperGameType(expectedRows, expectedCols, expectedGameDifficulty, expectedId)
         val minesweeperGameResponse = MinesweeperGameResponse.fromMinesweeperGameType(minesweeperGameType)
 
         // then
