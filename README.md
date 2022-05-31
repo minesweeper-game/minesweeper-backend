@@ -1,2 +1,2 @@
 # minesweeper-backend
-Backend for Minesweeper Gama
+Backend for Minesweeper Game
