@@ -1,19 +1,24 @@
 package com.thoughtworks.minesweeperbackend.domain.entities
 
-import com.thoughtworks.minesweeperbackend.domain.value_objects.BoardBoxStatus
+import com.thoughtworks.minesweeperbackend.domain.value_objects.GameDifficulty
 import org.assertj.core.api.Assertions.*
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class MinesweeperBoardBoxTest{
 
     @Test
-    fun `should should create minesweeper board box`(){
+    fun `should create a minesweeper game board when correct values are given`(){
+        // given
+        val expectedRows = 5
+        val expectedCols = 7
+        val expectedGameDifficulty = GameDifficulty.EASY
+
         // when
-        val minesweeperBoardBox = MinesweeperBoardBox()
+        val minesweeperGameBoard = MinesweeperGameBoard(expectedRows, expectedCols, expectedGameDifficulty)
 
         // then
-        assertThat(minesweeperBoardBox.status).isEqualTo(BoardBoxStatus.CLOSED)
-        assertThat(minesweeperBoardBox.is_mined).isEqualTo(false)
+        assertThat(minesweeperGameBoard.rows).isEqualTo(expectedRows)
+        assertThat(minesweeperGameBoard.cols).isEqualTo(expectedCols)
+        assertThat(minesweeperGameBoard.difficulty).isEqualTo(expectedGameDifficulty)
     }
 }
