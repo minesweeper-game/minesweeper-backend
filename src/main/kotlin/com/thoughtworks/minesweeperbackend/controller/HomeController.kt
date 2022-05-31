@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/")
-class HelloWorldController {
+class HomeController {
 
     @GetMapping
     fun home() : String = "Welcome to Minesweeper Game"
