@@ -4,7 +4,6 @@ import com.thoughtworks.minesweeperbackend.domain.value_objects.GameDifficulty
 
 class MinesweeperGameBoard {
 
-
     val MIN_ROWS_AND_COLS = 3
     val MAX_ROWS_AND_COLS = 17
 
@@ -22,6 +21,5 @@ class MinesweeperGameBoard {
         this.cols = cols
         this.difficulty = difficulty
         this.boardBoxes = Array(rows) { Array (cols) { MinesweeperBoardBox() } }
-
     }
 }
