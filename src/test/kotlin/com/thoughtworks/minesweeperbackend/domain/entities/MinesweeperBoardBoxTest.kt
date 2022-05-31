@@ -15,5 +15,4 @@ internal class MinesweeperBoardBoxTest{
         assertThat(minesweeperBoardBox.status).isEqualTo(BoardBoxStatus.CLOSED)
         assertThat(minesweeperBoardBox.is_mined).isEqualTo(false)
     }
-
 }

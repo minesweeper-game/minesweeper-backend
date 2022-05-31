@@ -90,6 +90,4 @@ internal class MinesweeperGameBoardTest{
         // then
         assertEquals("The maximum amount of rows and cols to be configured is 17", thrown.message);
     }
-    
-
 }
