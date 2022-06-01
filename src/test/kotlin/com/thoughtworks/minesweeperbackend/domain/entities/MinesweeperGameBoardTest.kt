@@ -40,7 +40,7 @@ internal class MinesweeperGameBoardTest{
         }
 
         // then
-        assertEquals("The minimum amount of rows and cols to be configured is 3", thrown.message);
+        assertEquals("The minimum amount of rows and cols to be configured is 3", thrown.message)
     }
     
     @Test
@@ -56,7 +56,7 @@ internal class MinesweeperGameBoardTest{
         }
 
         // then
-        assertEquals("The minimum amount of rows and cols to be configured is 3", thrown.message);
+        assertEquals("The minimum amount of rows and cols to be configured is 3", thrown.message)
     }
 
     @Test
@@ -72,7 +72,7 @@ internal class MinesweeperGameBoardTest{
         }
 
         // then
-        assertEquals("The maximum amount of rows and cols to be configured is 17", thrown.message);
+        assertEquals("The maximum amount of rows and cols to be configured is 17", thrown.message)
     }
 
     @Test
@@ -89,5 +89,50 @@ internal class MinesweeperGameBoardTest{
 
         // then
         assertEquals("The maximum amount of rows and cols to be configured is 17", thrown.message);
+    }
+
+    @Test
+    fun `should calculate correctly the amount of mine when the game is easy` (){
+        // given
+        val rows = 7
+        val cols = 3
+        val difficulty = GameDifficulty.EASY
+        val expectedAmountOfMines = 2
+
+        // when
+        val minesweeperGameBoard = MinesweeperGameBoard(rows, cols, difficulty)
+
+        // then
+        assertThat(minesweeperGameBoard.amountOfMines).isEqualTo(expectedAmountOfMines)
+    }
+
+    @Test
+    fun `should calculate correctly the amount of mine when the game is medium` (){
+        // given
+        val rows = 3
+        val cols = 5
+        val difficulty = GameDifficulty.MEDIUM
+        val expectedAmountOfMines = 8
+
+        // when
+        val minesweeperGameBoard = MinesweeperGameBoard(rows, cols, difficulty)
+
+        // then
+        assertThat(minesweeperGameBoard.amountOfMines).isEqualTo(expectedAmountOfMines)
+    }
+
+    @Test
+    fun `should calculate correctly the amount of mine when the game is hard` (){
+        // given
+        val rows = 5
+        val cols = 4
+        val difficulty = GameDifficulty.HARD
+        val expectedAmountOfMines = 15
+
+        // when
+        val minesweeperGameBoard = MinesweeperGameBoard(rows, cols, difficulty)
+
+        // then
+        assertThat(minesweeperGameBoard.amountOfMines).isEqualTo(expectedAmountOfMines)
     }
 }
