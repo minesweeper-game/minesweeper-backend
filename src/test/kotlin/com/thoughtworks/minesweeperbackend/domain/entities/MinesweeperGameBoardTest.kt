@@ -135,4 +135,24 @@ internal class MinesweeperGameBoardTest{
         // then
         assertThat(minesweeperGameBoard.amountOfMines).isEqualTo(expectedAmountOfMines)
     }
+
+    @Test
+    fun `should mined the game board successfully` (){
+        // given
+        val rows =6
+        val cols = 8
+        val difficulty = GameDifficulty.EASY
+        val expectedAmountOfMines = 5
+
+        // when
+        val minesweeperGameBoard = MinesweeperGameBoard(rows, cols, difficulty)
+
+        // then
+        var amountOfMines = 0
+        for (row in minesweeperGameBoard.boardBoxes)
+            for (box in row)
+                if (box.is_mined) amountOfMines++
+
+        assertThat(amountOfMines).isEqualTo(expectedAmountOfMines)
+    }
 }

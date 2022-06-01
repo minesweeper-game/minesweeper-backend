@@ -4,5 +4,5 @@ import com.thoughtworks.minesweeperbackend.domain.value_objects.BoardBoxStatus
 
 data class MinesweeperBoardBox(
     val status : BoardBoxStatus = BoardBoxStatus.CLOSED,
-    val is_mined: Boolean = false
+    var is_mined: Boolean = false
 )

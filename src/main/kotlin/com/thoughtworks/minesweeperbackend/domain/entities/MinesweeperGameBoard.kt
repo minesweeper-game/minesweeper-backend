@@ -2,6 +2,7 @@ package com.thoughtworks.minesweeperbackend.domain.entities
 
 import com.thoughtworks.minesweeperbackend.domain.value_objects.GameDifficulty
 import kotlin.math.roundToInt
+import kotlin.random.Random
 
 class MinesweeperGameBoard {
 
@@ -30,6 +31,7 @@ class MinesweeperGameBoard {
         this.difficulty = difficulty
         this.boardBoxes = Array(rows) { Array (cols) { MinesweeperBoardBox() } }
         this.amountOfMines = this.calculateAmountOfMines()
+        this.assignMines()
     }
 
     private fun calculateAmountOfMines(): Int{
@@ -40,5 +42,19 @@ class MinesweeperGameBoard {
         } / 100.0
         val amount = this.rows * this.cols * minesPercent
         return amount.roundToInt()
+    }
+
+    private fun assignMines(){
+        var assignedMines = 0
+
+        while (assignedMines < this.amountOfMines){
+            val row = Random.nextInt(0, this.rows - 1)
+            val col = Random.nextInt(0, this.cols - 1)
+
+            if (!this.boardBoxes[row][col].is_mined){
+                this.boardBoxes[row][col].is_mined = true
+                assignedMines++
+            }
+        }
     }
 }
