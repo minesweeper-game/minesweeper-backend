@@ -3,7 +3,6 @@ package com.thoughtworks.minesweeperbackend.domain.services
 import com.thoughtworks.minesweeperbackend.domain.value_objects.GameDifficulty
 import com.thoughtworks.minesweeperbackend.domain.value_objects.GameStatus
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class MinesweeperGameServiceTest{

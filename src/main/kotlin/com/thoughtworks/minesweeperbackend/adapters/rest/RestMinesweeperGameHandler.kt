@@ -7,7 +7,7 @@ import com.thoughtworks.minesweeperbackend.domain_ports.MinesweeperGameHandler
 
 class RestMinesweeperGameHandler: MinesweeperGameHandler {
 
-    override fun add(minesweeperGameType: MinesweeperGameType): MinesweeperGameResponse{
+    override fun add(minesweeperGameType: MinesweeperGameType): MinesweeperGameResponse {
         val minesweeperGameBoard = MinesweeperGameBoard(minesweeperGameType.rows, minesweeperGameType.cols, minesweeperGameType.difficulty)
         val minesweeperGame = MinesweeperGame(minesweeperGameBoard, minesweeperGameType.difficulty)
 

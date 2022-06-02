@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.*
 class MinesweeperGameApi {
 
     @ExceptionHandler(IllegalArgumentException::class)
-    fun handleBadRequest(e: IllegalArgumentException): ResponseEntity<BadRequestResponse> = ResponseEntity(BadRequestResponse(e.message), HttpStatus.BAD_REQUEST)
+    fun handleBadRequest(e: IllegalArgumentException): ResponseEntity<BadRequestResponse> = ResponseEntity(
+        BadRequestResponse(e.message), HttpStatus.BAD_REQUEST)
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
