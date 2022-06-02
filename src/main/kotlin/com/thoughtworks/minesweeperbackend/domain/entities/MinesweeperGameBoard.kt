@@ -48,8 +48,8 @@ class MinesweeperGameBoard {
         var assignedMines = 0
 
         while (assignedMines < this.amountOfMines){
-            val row = Random.nextInt(0, this.rows - 1)
-            val col = Random.nextInt(0, this.cols - 1)
+            val row = Random.nextInt(0, this.rows)
+            val col = Random.nextInt(0, this.cols)
 
             if (!this.boardBoxes[row][col].is_mined){
                 this.boardBoxes[row][col].is_mined = true
