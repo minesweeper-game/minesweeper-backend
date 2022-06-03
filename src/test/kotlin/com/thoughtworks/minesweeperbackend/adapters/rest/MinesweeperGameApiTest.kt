@@ -158,7 +158,6 @@ internal class MinesweeperGameApiTest{
         val minesweeperGameType = MinesweeperGameType(expectedRows, expectedCols, expectedGameDifficulty)
 
         val contents = objectMapper.writeValueAsString(minesweeperGameType)
-        println(contents)
 
         // when
         val performPost = mockMvc.post(baseUrl) {
